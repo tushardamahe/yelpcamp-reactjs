@@ -1,13 +1,11 @@
 const express = require("express");
 const app = express();
+const router = require("./router/auth-router");
 
-app.get("/", (req, res) => {
-  res.status(200).send("Welcome to Server TD");
-});
+app.use(express.json());
 
-app.get("/register", (req, res) => {
-  res.status(200).send("Welcome to Registration Page TD");
-});
+app.use("/api/auth", router);
+app.use("/api/register", router);
 
 const PORT = 5000;
 app.listen(PORT, () => {
