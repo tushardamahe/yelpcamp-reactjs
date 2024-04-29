@@ -1,8 +1,17 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const router = require("./router/auth-router");
 const connectDb = require("./utils/db");
 const errorMiddleware = require("./middleware/error-middleware");
+
+const corsOptions = {
+  origin: "http://127.0.0.1:5173",
+  methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
