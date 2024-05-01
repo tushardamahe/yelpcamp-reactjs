@@ -6,6 +6,7 @@ import Register from "./components/users/Register";
 import MainPage from "./components/campgrounds/MainPage";
 import Navbar from "./components/partials/Navbar";
 import Footer from "./components/partials/Footer";
+import Logout from "./components/users/Logout";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/edit" element={<Edit />} />
+          <Route path="/logout" element={<Logout />} />
         </Routes>
         <Footer />
       </BrowserRouter>
