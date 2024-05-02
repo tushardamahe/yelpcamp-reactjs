@@ -19,7 +19,7 @@ const authMiddleware = async (req, res, next) => {
       password: 0,
     });
 
-    req.user = useData;
+    req.user = userData;
     req.token = token;
     req.userID = userData._id;
 

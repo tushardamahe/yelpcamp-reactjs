@@ -2,7 +2,8 @@ import { NavLink } from "react-router-dom";
 import { useAuth } from "../../store/auth";
 
 const Navbar = () => {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, user } = useAuth();
+  console.log(user);
 
   return (
     <nav className="navbar">
@@ -14,7 +15,7 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-right">
-          <h3>Hello, User</h3>
+          {user && <h3>Hello, {user.userData[0].username}</h3>}
           <NavLink to="/campgrounds" className="navbar-link">
             Campgrounds
           </NavLink>
