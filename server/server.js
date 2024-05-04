@@ -17,6 +17,7 @@ app.use(express.json());
 
 app.use("/api/auth", router);
 app.use("/api/register", router);
+app.use("/api/campgrounds", router);
 
 app.use(errorMiddleware);
 
